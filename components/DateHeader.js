@@ -7,4 +7,4 @@ export default function DateHeader ({ date }) {
       {date}
     </Text>
   )
-}
+} 
