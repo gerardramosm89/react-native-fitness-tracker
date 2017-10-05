@@ -1,17 +1,18 @@
 import React from 'react'
-import { Text, View, TouchableOpacity } from 'react-native'
+import { View } from 'react-native'
 import AddEntry from './components/AddEntry'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import reducer from './reducers'
 
 export default class App extends React.Component {
-  handlePress = () => {
-    console.log('trying to alert')
-    alert('Hello');
-  }
   render() {
     return (
-      <View>
-        <AddEntry />
-      </View>
+      <Provider store={createStore(reducer)}>
+        <View>
+          <AddEntry />
+        </View>
+      </Provider>
     )
   }
 }
